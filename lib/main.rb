@@ -14,8 +14,7 @@ end
 
 get ('/') do
 erb :layout do
-  "<h1> #{15.fizzbuzz} </h1>
-    <p> Please enter a number to fizzbuzz it.</p>
+  "<p> Please enter a number to fizzbuzz it.</p>
     <br>
     <form action = '/' method='post'>
       <input type= 'text' name ='number'>
@@ -26,8 +25,7 @@ end
 
 post ('/') do
   erb :layout do
-    "<h1> #{15.fizzbuzz} </h1>
-    <p> #{params[:number]} --> #{params[:number].to_i.fizzbuzz}</p>
+    "<p> #{params[:number]} --> #{params[:number].to_i.fizzbuzz}</p>
     <p> Please enter a number to fizzbuzz it.</p>
     <br>
     <form action = '/' method='post'>
