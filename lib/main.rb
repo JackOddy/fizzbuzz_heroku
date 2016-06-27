@@ -1,8 +1,15 @@
 require 'sinatra'
 
+class String
+
+def is_integer?; true if Integer(self) rescue false end
+
+end
+
+
 class Integer
 
-  def fizzbuzz
+  def fzzbzz
     str = ''
     str << 'fizz' if self % 3 == 0
     str << 'buzz' if self % 5 == 0
@@ -11,10 +18,20 @@ class Integer
 
 end
 
+def fizzbuzz(str)
+
+  if str.is_integer?
+    str.to_i.fzzbzz
+  else
+    "is not a valid integer"
+  end
+
+end
 
 get ('/') do
 erb :layout do
-  "<p> Please enter a number to fizzbuzz it.</p>
+  "<h1> #{fizzbuzz '15'} </h1>
+    <p> Please enter a number to fizzbuzz it.</p>
     <br>
     <form action = '/' method='post'>
       <input type= 'text' name ='number'>
@@ -25,7 +42,8 @@ end
 
 post ('/') do
   erb :layout do
-    "<p> #{params[:number]} --> #{params[:number].to_i.fizzbuzz}</p>
+    "<h1> #{fizzbuzz '15'} </h1>
+    <p> #{params[:number]} --> #{fizzbuzz params[:number]}</p>
     <p> Please enter a number to fizzbuzz it.</p>
     <br>
     <form action = '/' method='post'>
