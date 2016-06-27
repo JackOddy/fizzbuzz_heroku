@@ -1,2 +1,2 @@
 gem "sinatra"
-ruby "2.2.4"
+ruby "2.0.0"
