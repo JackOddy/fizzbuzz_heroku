@@ -1,9 +1,16 @@
+<%
+# yields whatever is passed to it followed by a form that allows for input
+# of a number that is posted to the homepage (root directory) of the program
+# because it is using the sinatra framework, this whole file is then also
+# passed to layout.erb where it is then yielded inside the layout HTML code
+# to correctly display the webpage.
+%>
 
 <%= yield %>
 <br><br>
   <p> enter a number to fizzbuzz it</p>
-  <br><br>
-  <form action = '/' method='post'>
-    <input type= 'number' name ='number'>
-    <input type ='submit' value='fizzbuzz'>
-  </form>
+    <br><br>
+      <form action = '/' method='post'>
+        <input type= 'number' name ='number'>
+        <input type ='submit' value='fizzbuzz'>
+      </form>
