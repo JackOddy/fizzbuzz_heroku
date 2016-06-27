@@ -20,13 +20,19 @@ erb :layout do
     <form action = '/' method='post'>
       <input type= 'text' name ='number'>
       <input type ='submit'>
-    </form>>"
+    </form>"
   end
 end
 
 post ('/') do
   erb :layout do
     "<h1> #{15.fizzbuzz} </h1>
-    <p> #{params[:number]} --> #{params[:number].to_i.fizzbuzz}</p>"
+    <p> #{params[:number]} --> #{params[:number].to_i.fizzbuzz}</p>
+    <p> Please enter a number to fizzbuzz it.</p>
+    <br>
+    <form action = '/' method='post'>
+      <input type= 'text' name ='number'>
+      <input type ='submit'>
+    </form>"
   end
 end
