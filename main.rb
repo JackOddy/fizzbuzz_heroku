@@ -1,6 +1,6 @@
 require 'sinatra'
                   # uses sinatra framework
-require_relative 'lib/fizzbuzz'
+require File.dirname(__FILE__)+'/lib/fizzbuzz'
                   # requires class extensions to allow for FizzBuzz process
 
 get ('/') do # when loading homepage will load fzbz, which will yield the
