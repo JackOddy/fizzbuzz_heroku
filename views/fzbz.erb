@@ -5,12 +5,57 @@
 # passed to layout.erb where it is then yielded inside the layout HTML code
 # to correctly display the webpage.
 %>
+<style type='text/css'>
+    button{
+      border-width: medium;
+      border-color: white;
+      border-style: solid;
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      font-family: consolas;
+      text-align: center;
+      font-size: 20px;
+    }
 
+    .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: 'buzz';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 45px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .button:active{
+    position: relative;
+    top: 2px;
+  }
+  input {
+    font-size: 20px;
+  }
+</style>
 <%= yield %>
 <br><br>
   <p> enter a number to fizzbuzz it</p>
     <br><br>
       <form action = '/' method='post'>
-        <input type= 'number' name ='number'>
-        <input type ='submit' value='fizzbuzz'>
+        <input type= 'number' name ='number'><br><br><br>
+        <button class='button' type ='submit'><span>fizz</span></button>
       </form>
