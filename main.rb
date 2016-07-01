@@ -9,7 +9,7 @@ get ('/') do # when loading homepage will load fzbz, which will yield the
              # the fzbz.erb will be yielded in the layout.erb because that is
              # how sinatra works.
   erb :fzbz do
-    "fizz --> buzz"
+    "fizz &#x2192; buzz"
   end
 end
 
@@ -19,6 +19,6 @@ post ('/') do
                # the page will yield exactly the same but instead of the
                # 'fizz --> buzz' string, it will have the number entered with
                # what the required fizzbuzz method returns.
-    "#{params[:number]} --> #{fizzbuzz params[:number]}"
+    "#{params[:number]} &#x2192; #{fizzbuzz params[:number]}"
   end
 end
