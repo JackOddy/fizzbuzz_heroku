@@ -1,12 +1,76 @@
 <!doctype html>
 <html>
 <div align=center>
-<font face='consolas' font color='white'>
+  <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+<style type='text/css'>
+    body{
+      font-family: 'Comfortaa', sans-serif;
+      color: white;
+  }
+    h1 {
+      font-size: 45px;
+  }
+
+    button{
+      font-family: 'comfortaa', sans-serif;
+      border-width: medium;
+      border-color: white;
+      border-style: solid;
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      font-size: 20px;
+      text-align: center;
+      height: 35px;
+  }
+
+    .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: 'buzz';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 47px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .button:active{
+    position: relative;
+    top: 2px;
+  }
+  button:focus{
+    outline:none;
+  }
+  input {
+    font-size: 20px;
+    border-radius: 20px;
+    border-color: transparent;
+  }
+  input:focus{
+    outline:none;
+  }
+</style>
   <head>
-    <title> FIZZBUZZ </title>
+    <title> fizzbuzz </title>
   <body background="http://randomwallpapers.net/gradient-blur-abstract-1920x1200-wallpaper410521.jpg">
-    <br><br><br><br><br>
-    <h1><font size='10'>fizzbuzz</font></h1>
+    <br><br><br><br>
+    <h1>fizzbuzz</h1>
     <br>
     <%= yield %>
   </body>
